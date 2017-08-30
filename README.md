@@ -50,7 +50,7 @@ As you can imagine, it might take a while to find a Nonce that produces a valid 
 Right now, the blockchain object, as well as all of its blocks, all have the HTML elements referenced inside them.
 There is an API out there that verifies your blockchain, but only if you serialize the blockchain to pass over HTTP.
 
-Rule 1: Implement both challenges below in the challenge area close to the bottom of `index.html`
+Rule 1: Implement both challenges below in the challenge area close to the bottom of `src/index.js`
 Rule 2: Do not change or utlize the `chain` variable. And Do not change other parts of the app.
 
 ### 1. implement a `serialize` method
@@ -58,6 +58,20 @@ Rule 2: Do not change or utlize the `chain` variable. And Do not change other pa
 * The method should return a JSON stringified string of the blockchain.
 * When you implemented the code correctly, you should see the textarea under the Serialize Button populate
 
+The serialized chain should 
+```js
+[{
+    hashable: {previous: 'asdf', data: 'asdfefd', nonce: 'adi2jfidjfj'}, 
+    hash: 'stringadlfkj2wir'
+  },{
+    hashable: {previous: 'stringadlfkj2wir', data: 'asdfefd', nonce: 'adi2jfidjfj'}, 
+    hash: 'abdkfjie'
+  },{
+    hashable: {previous: 'abdkfjie', data: 'asdfefd', nonce: 'adi2jfidjfj'}, 
+    hash: 'strw3ifj8h382fdsdf'
+  }
+]
+```
 > Tip: Take a peek in the Blockchain and Block file and see which properties are useful.
 
 > Tip2: Use the dev console to access `chain`
